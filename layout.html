@@ -17,9 +17,29 @@
   <div class="cursor-outer" id="cursor-outer"></div>
 
   <!-- Shared Includes -->
-  <div id="navbar-placeholder"></div>
+<body>
+  <div id="navbar"></div>
+
   <main id="main-content"></main>
-  <div id="footer-placeholder"></div>
+
+  <div id="footer"></div>
+
+  <!-- JS to load navbar + footer -->
+  <script>
+    fetch("navbar.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+      });
+
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+  </script>
+</body>
+
 
   <!-- Scripts -->
   <script src="main.js"></script>
